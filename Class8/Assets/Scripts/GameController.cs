@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class GameController : MonoBehaviour
         cameraRig.target = playerObject;
         enemyProducer.SpawnEnemies(true);
         playerObject.GetComponent<Player>().onPlayerDeath += onPlayerDeath;
+
+        SceneManager.LoadScene("Menu");
     }
 
 
