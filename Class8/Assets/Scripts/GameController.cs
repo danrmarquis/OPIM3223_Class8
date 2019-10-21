@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -35,11 +36,12 @@ public class GameController : MonoBehaviour
             Destroy(enemy);
         }
 
-        var playerObject = Instantiate(playerPrefab, new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
-        var cameraRig = Camera.main.GetComponent<CameraRig>();
-        cameraRig.target = playerObject;
-        enemyProducer.SpawnEnemies(true);
-        playerObject.GetComponent<Player>().onPlayerDeath += onPlayerDeath;
+        //var playerObject = Instantiate(playerPrefab, new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
+        //var cameraRig = Camera.main.GetComponent<CameraRig>();
+        //cameraRig.target = playerObject;
+        //enemyProducer.SpawnEnemies(true);
+        //playerObject.GetComponent<Player>().onPlayerDeath += onPlayerDeath;
+        SceneManager.LoadScene("MenuScene");
     }
 
 
